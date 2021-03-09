@@ -1,0 +1,25 @@
+CREATE DATABASE Empresas;
+
+CREATE TABLE Empresa
+(
+	idEmpresa	INT PRIMARY KEY IDENTITY
+	,Nome		VARCHAR (100) NOT NULL
+	 
+);
+
+CREATE TABLE Veiculos
+(
+	idVeiculos	INT PRIMARY KEY IDENTITY
+	,Marca		VARCHAR (100)
+	,Modelo		VARCHAR (100)
+	,Placa		VARCHAR (100)
+);
+
+CREATE TABLE Cliente
+(
+	idCliente	INT PRIMARY KEY IDENTITY
+	,Nome		VARCHAR (100)
+	,CPF		VARCHAR (100)
+	,idVeiculos	INT FOREIGN KEY REFERENCES Veiculos (idVeiculos)
+
+);
